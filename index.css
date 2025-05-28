@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+html, body {
+    margin: 0;
+    height: 100%;
+    overflow-y: hidden;
+    /*add flash effect on startup*/
+    background-color: rgb(0, 0, 0); 
+}
+
+.banner{
+    position: absolute; /* Allow it to overlay content  */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    z-index: 2;
+}
+
+.navbar{
+    width: 85%;
+    margin: auto;
+    padding: 35px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 3;
+    font-family: 'Poppins', sans-serif;
+}
+
+.logo{
+    width: 120px;
+    cursor: pointer;
+}
+
+.navbar ul li{
+    list-style: none;
+    display: inline-block;
+    margin: 0 20px;
+    position: relative;
+}
+
+.navbar ul li a{
+    text-decoration: none;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.navbar ul li::after{
+    content: "";
+    height: 3px;
+    width: 0;
+    background: #00abf0;
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    transition: 0.5s;
+}
+
+.navbar ul li:hover::after{
+    width: 100%;
+}
+
+.content{
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    margin-top: 470px;
+    transform: translateY(-50%);
+    text-align: center;
+    color: #fff;
+    z-index: 2;
+}
+
+.content h1{
+    font-size: 50px;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+}
+
+.content h2{
+    font-size: 30px;
+    font-weight: 100;
+    line-height: 25px;
+    color: #00abf0;
+    font-family: 'Poppins', sans-serif;
+}
+
+.content p{
+    font-size: 25px;
+    font-weight: 100;
+    line-height: 25px;
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+}
+
+.matrix-container {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.matrix-container::after {
+  content: ""; 
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  /*adjust "smoke" effect on screen"*/
+  background-color: rgba(0, 0, 0, 0.75); 
+}
+
+.social-icons i {
+    font-size: 40px;
+    margin: 0 15px; /* Add spacing between icons */
+    color: #00abf0;
+}
+
+.popup-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100; /* Ensure popup is on top */
+    visibility: hidden; /* Initially hide the popup */
+  }
+  
+  .popup {
+    background-color: #0000009c;
+    padding: 40px; /* Increased padding for larger size */
+    border-radius: 5px;
+    text-align: center;
+    font-family: 'Poppins', sans-serif; /* Applied the font */
+    color: #00abf0;  /* Set the text color */
+    font-size: 40px;
+  } 
+  
+  .close-btn {
+    background-color: #00abf0; 
+    color: #fff;
+    border: none;
+    padding: 25px 45px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 30px;
+  }

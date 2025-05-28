@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+html, body {
+    margin: 0;
+    height: 100%;
+    overflow-y: hidden;
+    /*add flash effect on startup*/
+    background-color: rgb(0, 0, 0); 
+}
+
+.banner{
+    position: absolute; /* Allow it to overlay content  */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    z-index: 2;
+}
+
+.navbar{
+    width: 85%;
+    margin: auto;
+    padding: 35px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 3;
+    font-family: 'Poppins', sans-serif;
+}
+
+.logo{
+    width: 120px;
+    cursor: pointer;
+}
+
+.navbar ul li{
+    list-style: none;
+    display: inline-block;
+    margin: 0 20px;
+    position: relative;
+}
+
+.navbar ul li a{
+    text-decoration: none;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.navbar ul li::after{
+    content: "";
+    height: 3px;
+    width: 0;
+    background: #00f014;
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    transition: 0.5s;
+}
+
+.navbar ul li:hover::after{
+    width: 100%;
+}
+
+.matrix-container {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.matrix-container::after {
+  content: ""; 
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  /*adjust "smoke" effect on screen"*/
+  background-color: rgba(0, 0, 0, 0.75); 
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr;   /* Single column initially */
+    grid-template-rows: auto auto; /* Two rows with automatic height */
+    gap: 20px;                  /* Adds spacing between sections */
+    width: 80%; 
+    margin: 50px auto;
+    font-family: 'Poppins', sans-serif;
+}
+
+.text-section {
+    border: 2px solid #00acf0; 
+    padding: 20px;
+    background-color: #fff;
+    font-family: 'Poppins', sans-serif;
+} 
+
+/* Responsive Adjustment */
+@media (min-width: 768px) { /* Adjust breakpoint as needed */
+    .container {
+        grid-template-columns: 1fr 1fr; /* Two columns for wider screens */
+    }
+    .top-section {
+        grid-column: 1 / 3; /* Make the top section span both columns */
+    }
+}
+
+.container {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center;    /* Center items horizontally */
+    justify-content: center; /* Center items vertically */
+    width: 100%;
+    height: 100vh; /* Full viewport height */
+    text-align: center;
+    color: #fff;
+    z-index: 2;
+    font-family: 'Poppins', sans-serif;
+    margin: 0; /* Remove margin */
+    transform: none; /* Remove vertical translation */
+    top: auto; /* Reset top */
+}
+
+.container h1 {
+    color: white;
+    font-size: 40px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.container h3 {
+    color: #00f014;
+    font-family: 'Poppins', sans-serif;
+}
+
+.container p {
+    color: white;
+    font-size: 20px;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Responsive Adjustment */
+@media (min-width: 768px) { /* Adjust breakpoint as needed */
+    .container {
+        grid-template-columns: 1fr 1fr; /* Two columns for wider screens */
+    }
+    .top-section {
+        grid-column: 1 / 3; /* Make the top section span both columns */
+    }
+}
+
+.social-icons i {
+    font-size: 40px;
+    margin: 0 15px; /* Add spacing between icons */
+    color: #00f014;
+}
