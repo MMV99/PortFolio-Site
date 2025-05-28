@@ -1,156 +1,229 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 
+/* Reset and base styles */
 html, body {
     margin: 0;
-    height: 100%;
-    overflow-y: hidden;
-    /*add flash effect on startup*/
-    background-color: rgb(0, 0, 0); 
+    padding: 0;
+    min-height: 100vh;
+    width: 100%;
+    background: #000;
+    font-family: 'Poppins', sans-serif;
+    color: #fff;
+    box-sizing: border-box;
 }
 
-.banner{
-    position: absolute; /* Allow it to overlay content  */
-    top: 0;
-    left: 0;
+/* Banner */
+.banner {
+    position: relative;
     width: 100%;
-    height: auto;
     z-index: 2;
 }
 
-.navbar{
-    width: 85%;
-    margin: auto;
-    padding: 35px 0;
+/* Navbar */
+.navbar {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px 5vw 10px 5vw;
     display: flex;
     align-items: center;
     justify-content: space-between;
     z-index: 3;
     font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
 }
 
-.logo{
+.logo {
     width: 120px;
+    min-width: 70px;
+    max-width: 120px;
     cursor: pointer;
 }
 
-.navbar ul li{
+.navbar ul {
     list-style: none;
-    display: inline-block;
-    margin: 0 20px;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.navbar ul li {
+    margin: 0 18px;
     position: relative;
 }
 
-.navbar ul li a{
+.navbar ul li a {
     text-decoration: none;
     color: #fff;
     text-transform: uppercase;
+    font-size: 1rem;
+    padding: 5px 2px;
+    transition: color 0.2s;
 }
 
-.navbar ul li::after{
+.navbar ul li::after {
     content: "";
     height: 3px;
     width: 0;
     background: #00f014;
     position: absolute;
     left: 0;
-    bottom: -10px;
+    bottom: -6px;
     transition: 0.5s;
 }
 
-.navbar ul li:hover::after{
+.navbar ul li:hover::after {
     width: 100%;
 }
 
+.navbar ul li:hover a {
+    color: #00f014;
+}
+
+/* Matrix background effect */
 .matrix-container {
-  position: relative;
-  overflow: hidden;
-  z-index: 1;
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    z-index: 1;
+    pointer-events: none;
 }
 
 .matrix-container::after {
-  content: ""; 
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-
-  /*adjust "smoke" effect on screen"*/
-  background-color: rgba(0, 0, 0, 0.75); 
+    content: ""; 
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.75); 
+    pointer-events: none;
 }
 
+/* Main content container */
 .container {
     display: grid;
-    grid-template-columns: 1fr;   /* Single column initially */
-    grid-template-rows: auto auto; /* Two rows with automatic height */
-    gap: 20px;                  /* Adds spacing between sections */
-    width: 80%; 
-    margin: 50px auto;
-    font-family: 'Poppins', sans-serif;
+    grid-template-columns: 1fr;
+    gap: 24px;
+    width: 90%;
+    max-width: 1100px;
+    margin: 80px auto 30px auto;
+    z-index: 2;
+    position: relative;
+    box-sizing: border-box;
+    padding-bottom: 40px;
+}
+
+.top-section {
+    grid-column: 1 / -1;
+    margin-bottom: 10px;
 }
 
 .text-section {
     border: 2px solid #00acf0; 
-    padding: 20px;
-    background-color: #fff;
+    padding: 24px;
+    background-color: #111a;
+    border-radius: 10px;
     font-family: 'Poppins', sans-serif;
-} 
-
-/* Responsive Adjustment */
-@media (min-width: 768px) { /* Adjust breakpoint as needed */
-    .container {
-        grid-template-columns: 1fr 1fr; /* Two columns for wider screens */
-    }
-    .top-section {
-        grid-column: 1 / 3; /* Make the top section span both columns */
-    }
-}
-
-.container {
-    display: flex;
-    flex-direction: column; /* Stack items vertically */
-    align-items: center;    /* Center items horizontally */
-    justify-content: center; /* Center items vertically */
-    width: 100%;
-    height: 100vh; /* Full viewport height */
-    text-align: center;
-    color: #fff;
-    z-index: 2;
-    font-family: 'Poppins', sans-serif;
-    margin: 0; /* Remove margin */
-    transform: none; /* Remove vertical translation */
-    top: auto; /* Reset top */
+    box-sizing: border-box;
+    margin-bottom: 0;
 }
 
 .container h1 {
     color: white;
-    font-size: 40px;
-    font-family: 'Poppins', sans-serif;
+    font-size: 2.2rem;
+    margin: 0 0 10px 0;
 }
 
 .container h3 {
     color: #00f014;
-    font-family: 'Poppins', sans-serif;
+    font-size: 1.3rem;
+    margin: 10px 0 5px 0;
 }
 
 .container p {
     color: white;
-    font-size: 20px;
-    font-family: 'Poppins', sans-serif;
+    font-size: 1.1rem;
+    margin: 5px 0;
 }
 
-/* Responsive Adjustment */
-@media (min-width: 768px) { /* Adjust breakpoint as needed */
-    .container {
-        grid-template-columns: 1fr 1fr; /* Two columns for wider screens */
-    }
-    .top-section {
-        grid-column: 1 / 3; /* Make the top section span both columns */
-    }
+/* Social icons */
+.social-icons {
+    margin-top: 20px;
 }
 
 .social-icons i {
-    font-size: 40px;
-    margin: 0 15px; /* Add spacing between icons */
+    font-size: 2.2rem;
+    margin: 0 15px;
     color: #00f014;
+    transition: color 0.2s, transform 0.2s;
+}
+
+.social-icons i:hover {
+    color: #00acf0;
+    transform: scale(1.15);
+}
+
+/* Responsive: 2 columns for medium+ screens */
+@media (min-width: 900px) {
+    .container {
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+    }
+    .top-section {
+        grid-column: 1 / 3;
+    }
+}
+
+/* Responsive: Navbar and content for small screens */
+@media (max-width: 700px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px 3vw;
+    }
+    .navbar ul {
+        flex-direction: column;
+        width: 100%;
+        margin-top: 10px;
+    }
+    .navbar ul li {
+        margin: 10px 0;
+    }
+    .logo {
+        margin-bottom: 10px;
+    }
+    .container {
+        margin: 60px auto 20px auto;
+        padding: 0 2vw;
+    }
+    .container h1 {
+        font-size: 1.5rem;
+    }
+    .container h3 {
+        font-size: 1.1rem;
+    }
+    .container p {
+        font-size: 1rem;
+    }
+    .social-icons i {
+        font-size: 1.5rem;
+    }
+}
+
+/* Responsive: Reduce padding and font for very small screens */
+@media (max-width: 480px) {
+    .navbar {
+        padding: 8px 1vw;
+    }
+    .logo {
+        width: 70px;
+    }
+    .container {
+        margin: 40px auto 10px auto;
+        gap: 10px;
+    }
+    .text-section {
+        padding: 10px;
+    }
 }
