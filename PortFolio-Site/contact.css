@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+html, body {
+    margin: 0;
+    height: 100%;
+    overflow-y: hidden;
+    background-color: rgb(0, 0, 0); 
+}
+
+.banner {
+    position: absolute; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    z-index: 2;
+}
+
+.navbar {
+    width: 85%;
+    margin: auto;
+    padding: 35px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 3;
+    font-family: 'Poppins', sans-serif;
+}
+
+.logo {
+    width: 120px;
+    cursor: pointer;
+}
+
+.navbar ul {
+    display: flex;
+    padding: 0;
+}
+
+.navbar ul li {
+    list-style: none;
+    margin: 0 20px;
+    position: relative;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.navbar ul li::after {
+    content: "";
+    height: 3px;
+    width: 0;
+    background: violet;
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    transition: 0.5s;
+}
+
+.navbar ul li:hover::after {
+    width: 100%;
+}
+
+.matrix-container {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.matrix-container::after {
+    content: ""; 
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.75); 
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    margin: 50px auto;
+    text-align: center;
+    color: #fff;
+    z-index: 2;
+    font-family: 'Poppins', sans-serif;
+}
+
+.text-section {
+    border: 2px solid #00acf0; 
+    padding: 20px;
+    background-color: #fff;
+    width: 100%;
+    max-width: 600px; /* Limit width for larger screens */
+}
+
+.container h1 {
+    color: violet;
+    font-size: 50px;
+}
+
+.container h3 {
+    font-size: 30px;
+    color: rgb(255, 255, 255);
+}
+
+.text-section {
+    border: 2px solid #00acf000;
+    padding: 30px;
+    background-color: #ffffff00;
+} 
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column; /* Stack navbar items vertically on small screens */
+        align-items: flex-start; /* Align items to the start */
+    }
+
+    .navbar ul {
+        flex-direction: column; /* Stack list items vertically */
+        width: 100%; /* Full width */
+    }
+
+    .navbar ul li {
+        margin: 10px 0; /* Add margin for spacing */
+    }
+
+    .container {
+        width: 90%; /* Adjust container width for smaller screens */
+    }
+
+    .container h1 {
+        font-size: 40px; /* Adjust font size */
+    }
+
+    .container h3 {
+        font-size: 25px; /* Adjust font size */
+    }
+} 
+
+@media (min-width: 768px) {
+    .container {
+        grid-template-columns: 1fr 1fr; /* Two columns for wider screens */
+    }
+}
