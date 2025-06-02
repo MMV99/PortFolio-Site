@@ -1,63 +1,67 @@
 <!DOCTYPE html>
-<html lang='en'>
-    <head>
-        <meta charset='UTF-8'>
-        <title>Curriculum vitae</title>
-        <link rel="stylesheet" href='cv.css'>
-        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    </head>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Curriculum Vitae – Mikko Vaarala</title>
+  <link rel="stylesheet" href="cv.css">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
 
-    <body>
+  <div class="matrix-container">
+    <canvas id="matrix"></canvas>
+  </div>
+  <script src="scriptcv.js"></script>
 
-        <div class="matrix-container">
-            <canvas id="matrix"></canvas>
+  <div class="banner">
+    <header class="navbar">
+      <img src="logo4.png" class="logo" alt="Logo">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="cv.html">CV</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </header>
+
+    <main class="cv-container">
+      <h1>Curriculum Vitae</h1>
+      <section class="cv-columns">
+        <div class="cv-section">
+          <h2><i class='bx bx-book'></i> Education</h2>
+          <p><strong>Bachelor of Engineering – Information Technology</strong><br>Lapland UAS, 2020–2024</p>
+          <p><strong>Vocational Qualification in ICT</strong><br>2015–2018 • Lions Club Stipend Recipient</p>
+
+          <h2><i class='bx bx-briefcase'></i> Internship</h2>
+          <p>Elwira Oy – Electronics Dismantler (05/2017–06/2017)</p>
+          <p>Lapin Systema Oy – Technician (11/2017–01/2018)</p>
+
+          <h2><i class='bx bx-buildings'></i> Work Experience</h2>
+          <p>Sijaishaltija Oy – Janitor (2017)</p>
+          <p>Power Finland Oy – Warehouse Operative, Maintenance Supervisor, Technician (2018–2020)</p>
         </div>
 
-        <script src='./scriptcv.js'></script> 
+        <div class="cv-section">
+          <h2><i class='bx bx-globe'></i> Languages</h2>
+          <p>Finnish – Native</p>
+          <p>English – Professional Proficiency</p>
+          <p>Swedish – Basic Skills</p>
 
-        <div class="banner">
-            <div class="navbar">
-                <img src="logo4.png" class="logo">
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="cv.html">Cv</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </div>
+          <h2><i class='bx bx-certification'></i> Certificates</h2>
+          <ul>
+            <li>Emergency Aid Level 1 (2016)</li>
+            <li>Electrical Safety Training (2016)</li>
+            <li>Occupational Safety Card (2016)</li>
+            <li>Fire Safety Training (2016)</li>
+            <li>Calman Calibration Training (2018)</li>
+          </ul>
 
-            <div class="container">  
-                <div class="text-section top-section">
-                    <h1>Curriculum Vitae</h1>
-                    <div class="social-icons"> 
-                        <a href="https://www.linkedin.com/in/mikko-vaarala-216258167/" target="_blank"><i class='bx bxl-linkedin'></i></a>
-                        <a href="https://github.com/MMV99" target="_blank"><i class='bx bxl-github'></i></a>
-                    </div>
-                </div>
-                <div class="text-section left-section">
-                    <h3>Education</h3>
-                    <p>Vocational Qualification in Information and Communication Technology 2015-2018. Lions Club Rovaniemi stipend.</p>
-                    <p>Bachelor of Engineering, Information Technology 2020-Ongoing.</p>
-                    <h3>Internship</h3>
-                    <p>Elwira Oy │ Electronics dismantler 05.2017-06.2017.</p>
-                    <p>Lapin Systema Oy │ Technician 11.2017-01.2018.</p>
-                    <h3>Work experience</h3>
-                    <p>Sijaishaltija Oy │ Janitor. 2017-2017.</p>
-                    <p>Power Finland Oy │ Warehouse Operative, Maintenance Supervisor, Technician. 2018-2020.</p>
-                </div> 
-                <div class="text-section right-section">
-                    <h3>Languages</h3>
-                    <p>Finnish │ Mother Tongue.</p>
-                    <p>English │ Proficient in the language.</p>
-                    <p>Swedish │ Basic Language Skills.</p>
-                    <h3>Certificates</h3>
-                    <p>Emergency Aid Level 1 2016.</p>
-                    <p>Electrical safety training 2016.</p>
-                    <p>Occupational Safety Card Training 2016.</p>
-                    <p>Fire Safety Training 2016.</p>
-                    <p>Calman calibration training 2018.</p>
-                </div> 
-            </div>
+          <h2><i class='bx bx-link'></i> Links</h2>
+          <a href="https://www.linkedin.com/in/mikko-vaarala-216258167/" target="_blank"><i class='bx bxl-linkedin'></i> LinkedIn</a><br>
+          <a href="https://github.com/MMV99" target="_blank"><i class='bx bxl-github'></i> GitHub</a>
         </div>
-    
-    </body>
+      </section>
+    </main>
+  </div>
+</body>
 </html>

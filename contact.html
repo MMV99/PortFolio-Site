@@ -1,39 +1,36 @@
 <!DOCTYPE html>
-<html lang='en'>
-    <head>
-        <meta charset='UTF-8'>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Contact</title>
-        <link rel="stylesheet" href='contact.css'>
-        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    </head>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Contact – Mikko Vaarala</title>
+  <link rel="stylesheet" href="contact.css" />
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+<body>
 
-    <body>
+  <div class="matrix-container">
+    <canvas id="matrix"></canvas>
+  </div>
+  <script src="scriptcontact.js"></script>
 
-        <div class="matrix-container">
-            <canvas id="matrix"></canvas>
-        </div>
+  <div class="banner">
+    <header class="navbar">
+      <img src="logo4.png" class="logo" alt="Logo">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="cv.html">CV</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </header>
 
-        <script src='./scriptcontact.js'></script> 
-
-        <div class="banner">
-            <div class="navbar">
-                <img src="logo4.png" class="logo" alt="Logo">
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="cv.html">Cv</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </div>
-
-            <div class="container">  
-                <div class="text-section top-section">
-                    <h1>Contact Me</h1>
-                    <h3>+358 40 769 36 42</h3>
-                    <h3>Mikkovaarala@outlook.com</h3>
-                </div>
-            </div>
-        </div>
-    
-    </body>
+    <main class="contact-container">
+      <h1>Contact Me</h1>
+      <div class="contact-box">
+        <p><i class='bx bx-phone'></i> +358 40 769 3642</p>
+        <p><i class='bx bx-envelope'></i> mikkovaarala@outlook.com</p>
+      </div>
+    </main>
+  </div>
+</body>
 </html>
