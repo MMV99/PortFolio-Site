@@ -2,62 +2,54 @@
 
 :root {
   --primary-color: #00abf0;
+  --accent-color: #00f014;
+  --highlight-color: violet;
   --text-color: #ffffff;
-  --bg-overlay: rgba(0, 0, 0, 0.7);
+  --bg-overlay: rgba(0, 0, 0, 0.75);
 }
 
-html, body {
+body {
   margin: 0;
-  padding: 0;
-  height: 100%;
   font-family: 'Poppins', sans-serif;
-  background: #000;
+  background-color: #000;
   color: var(--text-color);
   overflow-x: hidden;
 }
 
-.container {
-  position: relative;
-  z-index: 2;
-  padding: 50px 20px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-/* Matrix */
 .matrix-container {
   position: fixed;
   top: 0;
   left: 0;
+  z-index: 0;
   width: 100%;
   height: 100%;
-  z-index: 0;
-  overflow: hidden;
 }
 .matrix-container::after {
-  content: '';
+  content: "";
   position: absolute;
   width: 100%;
   height: 100%;
-  background: var(--bg-overlay);
+  background-color: var(--bg-overlay);
 }
 
-/* Navbar */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  margin-bottom: 40px;
+  padding: 20px 30px;
+  max-width: 1200px;
+  margin: 0 auto 40px;
 }
 .logo {
-  width: 120px;
+  width: 100px;
 }
 .navbar ul {
-  list-style: none;
   display: flex;
-  padding: 0;
   gap: 20px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 .navbar ul li a {
   color: var(--text-color);
@@ -71,7 +63,14 @@ html, body {
   border-bottom: 2px solid var(--primary-color);
 }
 
-/* Hero Section */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  z-index: 2;
+  position: relative;
+}
+
 .hero {
   text-align: center;
 }
@@ -91,7 +90,6 @@ html, body {
   line-height: 1.6;
 }
 
-/* Popup */
 .popup-container {
   position: fixed;
   top: 0;
@@ -121,22 +119,4 @@ html, body {
   font-size: 1rem;
   border-radius: 5px;
   cursor: pointer;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .hero h1 {
-    font-size: 2rem;
-  }
-  .hero h2 {
-    font-size: 1.2rem;
-  }
-  .summary {
-    font-size: 1rem;
-    padding: 0 10px;
-  }
-  .navbar ul {
-    flex-direction: column;
-    gap: 10px;
-  }
 }

@@ -3,13 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mikko Vaarala – CV Portfolio</title>
+  <title>Mikko Vaarala – Portfolio</title>
   <link rel="stylesheet" href="index.css" />
   <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
 </head>
-<body>
-
-  <!-- Popup -->
+<body data-matrix-color="#00abf0">
   <div class="popup-container">
     <div class="popup">
       <p>Site Under Construction</p>
@@ -18,17 +16,11 @@
     </div>
   </div>
 
-  <!-- Matrix Background -->
-  <div class="matrix-container">
-    <canvas id="matrix"></canvas>
-  </div>
+  <div class="matrix-container"><canvas id="matrix"></canvas></div>
 
-  <!-- Main Content -->
   <div class="container">
-
-    <!-- Header / Navigation -->
     <header class="navbar">
-      <img src="logo4.png" class="logo" alt="Logo" />
+      <img src="images/logo4.png" class="logo" alt="Logo">
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="cv.html">CV</a></li>
@@ -36,22 +28,15 @@
       </ul>
     </header>
 
-    <!-- Hero Section -->
     <section class="hero">
-      <div class="intro">
-        <h1>Mikko Vaarala</h1>
-        <h2>Bachelor of Engineering – Information Technology</h2>
-        <p class="summary">
-          A 26-year-old IT graduate from Rovaniemi, Finland, with a professional background in electronics, maintenance, and technical support. I bring a hands-on, analytical approach to solving problems, supported by experience as a Technician and Maintenance Supervisor.
-        </p>
-        <p class="summary">
-          I am passionate about technology and continuous learning. My hobbies include video games, fishing, automotive mechanics, and tinkering with computer systems.
-        </p>
-      </div>
+      <h1>Mikko Vaarala</h1>
+      <h2>Bachelor of Engineering – Information Technology</h2>
+      <p class="summary">A 26-year-old IT graduate from Rovaniemi, Finland, with a professional background in electronics, maintenance, and technical support. I bring a hands-on, analytical approach to solving problems, supported by experience as a Technician and Maintenance Supervisor.</p>
+      <p class="summary">I am passionate about technology and continuous learning. My hobbies include video games, fishing, automotive mechanics, and tinkering with computer systems.</p>
     </section>
-
   </div>
 
-  <script src="script.js"></script>
+  <script src="js/matrix.js"></script>
+  <script src="js/popup.js"></script>
 </body>
 </html>

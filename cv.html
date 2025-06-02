@@ -2,21 +2,17 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Curriculum Vitae – Mikko Vaarala</title>
   <link rel="stylesheet" href="cv.css">
   <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-<body>
+<body data-matrix-color="#00f014">
+  <div class="matrix-container"><canvas id="matrix"></canvas></div>
 
-  <div class="matrix-container">
-    <canvas id="matrix"></canvas>
-  </div>
-  <script src="scriptcv.js"></script>
-
-  <div class="banner">
+  <div class="container">
     <header class="navbar">
-      <img src="logo4.png" class="logo" alt="Logo">
+      <img src="images/logo4.png" class="logo" alt="Logo">
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="cv.html">CV</a></li>
@@ -63,5 +59,7 @@
       </section>
     </main>
   </div>
+
+  <script src="js/matrix.js"></script>
 </body>
 </html>
