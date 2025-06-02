@@ -1,50 +1,59 @@
-var q = document.getElementById('matrix'),
-    s = window.screen,
-    w, h;
-p = Array(256).join(1).split(''); // Initialize based on initial screen size
-c = q.getContext('2d'),
-m = Math;
+const canvas = document.getElementById('matrix');
+const ctx = canvas.getContext('2d');
 
+let width, height;
+let columns;
+let drops = [];
+
+// Resize canvas and adjust drops
 function resizeCanvas() {
-    w = q.width = window.innerWidth;
-    h = q.height = window.innerHeight;
+    width = canvas.width = window.innerWidth;
+    height = canvas.height = window.innerHeight;
 
-    // Adjust length of 'p' array based on screen width
-    p = Array(Math.ceil(w / 10)).join(1).split(''); 
+    columns = Math.floor(width / 10);
+    drops = new Array(columns).fill(1);
 
-    // Optional: Adjust font size
-    c.font = '12px monospace'; 
+    ctx.font = '12px monospace';
 }
-
-setInterval(function() {
-    // adjust background color
-    c.fillStyle = 'rgba(0,0,0,0.02)';
-    c.fillRect(0, 0, w, h);
-
-    // adjust ripple color
-    c.fillStyle = 'rgba(0,0,255,1)';
-
-    p = p.map(function(v, i) {
-        r = m.random();
-        var str = String.fromCharCode(m.floor(2720 + r * 33));
-        c.fillText(str, i * 10, v);
-        v += 10;
-        var ret = v > 768 + r * 1e4 ? 0 : v;
-        return ret;
-    });
-}, 33);
-
-// adjust matrix to fit the screen
 window.addEventListener('resize', resizeCanvas);
-resizeCanvas(); 
+resizeCanvas();
 
+// Matrix animation
+function drawMatrix() {
+    ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+    ctx.fillRect(0, 0, width, height);
+
+    ctx.fillStyle = '#00f'; // blue glow
+    for (let i = 0; i < drops.length; i++) {
+        const char = String.fromCharCode(2720 + Math.random() * 33);
+        const x = i * 10;
+        const y = drops[i] * 10;
+
+        ctx.fillText(char, x, y);
+
+        if (y > height && Math.random() > 0.975) {
+            drops[i] = 0;
+        }
+
+        drops[i]++;
+    }
+}
+setInterval(drawMatrix, 33);
+
+// Popup logic
 const popupContainer = document.querySelector('.popup-container');
 const closeBtn = document.querySelector('.close-btn');
 
-// Show the popup immediately
-popupContainer.style.visibility = 'visible';
+function showPopup() {
+    if (popupContainer) popupContainer.style.visibility = 'visible';
+}
 
-// Close popup on button click
-closeBtn.addEventListener('click', () => {
-    popupContainer.style.visibility = 'hidden';
-});
+function closePopup() {
+    if (popupContainer) popupContainer.style.visibility = 'hidden';
+}
+
+if (closeBtn) {
+    closeBtn.addEventListener('click', closePopup);
+}
+
+window.addEventListener('load', showPopup);
