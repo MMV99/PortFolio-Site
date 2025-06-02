@@ -1,9 +1,9 @@
 var q=document.getElementById('matrix'),
     s=window.screen,
     w, h;
-        p=Array(256).join(1).split(''); // Initialize based on initial screen size
-        c=q.getContext('2d'),
-        m=Math;
+p=Array(256).join(1).split(''); // Initialize based on initial screen size
+c=q.getContext('2d'),
+m=Math;
 
 function resizeCanvas() {
     w = q.width = window.innerWidth;
@@ -37,4 +37,4 @@ setInterval(function(){
 
 // adjust matrix to fit the screen
 window.addEventListener('resize', resizeCanvas);
-resizeCanvas(); 
+resizeCanvas();
