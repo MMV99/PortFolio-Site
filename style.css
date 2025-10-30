@@ -52,27 +52,12 @@
   display:block;
 }
 
-/* Smoke overlay: smoky glass look sitting above lava */
-.smoke-overlay{
-  position:absolute;
-  inset:0;
-  z-index:-2;
-  background:
-    radial-gradient(40% 30% at 10% 10%, rgba(255,255,255,0.02), transparent 12%),
-    radial-gradient(50% 40% at 90% 80%, rgba(255,255,255,0.02), transparent 10%),
-    linear-gradient(180deg, rgba(6,10,16,0.38), rgba(8,12,18,0.45));
-  backdrop-filter: blur(8px) saturate(1.05);
-  -webkit-backdrop-filter: blur(8px) saturate(1.05);
-  mix-blend-mode: overlay;
-  opacity:0.95;
-  animation: smokeShift 18s linear infinite;
-}
+/* layering: lava (deepest), smoke (above lava), content (above both) */
+#lava { z-index: -4; }
+#smoke { z-index: -3; }
 
-@keyframes smokeShift {
-  0% { transform: translateY(0) scale(1); }
-  50%{ transform: translateY(-6%) scale(1.02); }
-  100%{ transform: translateY(0) scale(1); }
-}
+/* ensure page content sits above canvases */
+main, .navbar, .glass-container { position: relative; z-index: 20; }
 
 /* Content */
 .navbar{

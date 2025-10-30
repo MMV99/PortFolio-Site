@@ -9,16 +9,16 @@
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
 </head>
 <body>
-    <div class="matrix-container">
-        <canvas id="lava"></canvas>
-        <div class="smoke-overlay"></div>
+    <div class="background-container" aria-hidden="true">
+        <canvas id="lava" role="img" aria-hidden="true"></canvas>
+        <canvas id="smoke" role="img" aria-hidden="true"></canvas>
     </div>
 
-    <nav class="navbar">
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
         <div class="logo-container">
-            <img src="logo.png" alt="MMV Logo" class="logo">
+            <img src="mmv-logo.png" alt="MMV Logo" class="logo">
         </div>
-        <ul>
+        <ul class="nav-list">
             <li><a href="#home">Home</a></li>
             <li><a href="#cv">CV</a></li>
             <li><a href="#contact">Contact</a></li>
@@ -32,7 +32,6 @@
                 <h2>Software Developer & Problem Solver</h2>
                 <p class="summary">
                     Passionate about creating elegant solutions through code.
-                    Specialized in full‑stack development with focus on UX.
                 </p>
             </div>
         </section>
@@ -67,6 +66,7 @@
     </main>
 
     <script src="lava.js"></script>
+    <script src="smoke.js"></script>
     <script src="smooth-scroll.js"></script>
     <script src="popup.js"></script>
 </body>
