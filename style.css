@@ -82,7 +82,7 @@ main, .navbar, .glass-container {
 }
 
 .logo { 
-  height: 84px; 
+  height: 60px; 
   filter: drop-shadow(0 0 8px var(--vapo-blue)) brightness(1.2);
   transition: all 0.3s ease;
 }
