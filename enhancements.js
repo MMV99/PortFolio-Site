@@ -2,23 +2,49 @@
 (function() {
   const navbar = document.querySelector('.navbar');
   let lastScrollY = window.scrollY;
+  let ticking = false;
   
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
+  function updateNavbar() {
+    const currentScrollY = window.scrollY;
+    
+    if (currentScrollY > 50) {
       navbar.classList.add('scrolled');
     } else {
       navbar.classList.remove('scrolled');
     }
     
-    // Hide/show navbar on scroll
-    if (window.scrollY > lastScrollY && window.scrollY > 100) {
+    // Hide navbar when scrolling down, show when scrolling up
+    if (currentScrollY > lastScrollY && currentScrollY > 100) {
+      // Scrolling down
       navbar.style.transform = 'translateY(-100%)';
+      navbar.style.opacity = '0';
     } else {
+      // Scrolling up or at top
       navbar.style.transform = 'translateY(0)';
+      navbar.style.opacity = '1';
     }
     
-    lastScrollY = window.scrollY;
-  });
+    lastScrollY = currentScrollY;
+    ticking = false;
+  }
+  
+  function onScroll() {
+    if (!ticking) {
+      requestAnimationFrame(updateNavbar);
+      ticking = true;
+    }
+  }
+  
+  window.addEventListener('scroll', onScroll, { passive: true });
+  
+  // Add smooth transition for navbar
+  const style = document.createElement('style');
+  style.textContent = `
+    .navbar {
+      transition: transform 0.3s ease, opacity 0.3s ease, background 0.3s ease;
+    }
+  `;
+  document.head.appendChild(style);
 })();
 
 // Enhanced typing effect for hero section
@@ -102,4 +128,17 @@
     }
   `;
   document.head.appendChild(style);
+})();
+
+// Mouse move effect for navbar (optional enhancement)
+(function() {
+  const navbar = document.querySelector('.navbar');
+  
+  document.addEventListener('mousemove', (e) => {
+    // Show navbar when mouse moves near the top
+    if (e.clientY < 100) {
+      navbar.style.transform = 'translateY(0)';
+      navbar.style.opacity = '1';
+    }
+  });
 })();

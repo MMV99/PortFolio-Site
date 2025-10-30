@@ -73,7 +73,7 @@ main, .navbar, .glass-container {
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(255,255,255,0.1);
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease, opacity 0.3s ease, background 0.3s ease;
 }
 
 .logo-container {
