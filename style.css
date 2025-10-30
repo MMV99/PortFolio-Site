@@ -73,7 +73,15 @@ main, .navbar, .glass-container {
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(255,255,255,0.1);
-  transition: transform 0.3s ease, opacity 0.3s ease, background 0.3s ease;
+  transition: background 0.3s ease, backdrop-filter 0.3s ease;
+  transform: translateY(0) !important; /* Force always visible */
+}
+
+.navbar.scrolled {
+  background: rgba(3,6,10,0.95);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom-color: rgba(255,255,255,0.15);
 }
 
 .logo-container {
@@ -82,7 +90,7 @@ main, .navbar, .glass-container {
 }
 
 .logo { 
-  height: 58px; 
+  height: 84px; 
   filter: drop-shadow(0 0 8px var(--vapo-blue)) brightness(1.2);
   transition: all 0.3s ease;
 }
@@ -107,6 +115,23 @@ main, .navbar, .glass-container {
   border-radius: 6px;
   transition: all 0.3s ease;
   position: relative;
+  overflow: hidden;
+}
+
+.nav-link::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--vapo-pink), var(--vapo-blue));
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::before,
+.nav-link.active::before {
+  width: 100%;
 }
 
 .nav-link:hover,
