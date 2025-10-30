@@ -188,3 +188,8 @@ main{position:relative; z-index:20}
   .section{padding:68px 4% 36px}
   .glass-container{padding:16px;border-radius:10px}
 }
+/* Active nav link */
+.nav-link.active {
+  color: var(--accent);
+  background: rgba(255,255,255,0.06);
+}
