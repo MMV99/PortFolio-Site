@@ -43,6 +43,7 @@ body {
   margin: 0 auto 40px;
   padding: 12px 16px;
   margin-bottom: 24px;
+  position: relative;
 }
 .logo {
   width: 100px;
@@ -54,6 +55,10 @@ body {
   list-style: none;
   padding: 0;
   margin: 0;
+  transition: max-height 0.28s ease, opacity 0.28s ease;
+}
+.navbar ul.open {
+  display: flex;
 }
 .navbar ul li a {
   color: var(--text-color);
@@ -65,6 +70,24 @@ body {
 }
 .navbar ul li a:hover {
   border-bottom: 2px solid var(--primary-color);
+}
+
+/* NAV TOGGLE (mobile) */
+.nav-toggle {
+  display: none;
+  background: transparent;
+  border: 0;
+  color: var(--text-color);
+  font-size: 1.6rem;
+  align-self: center;
+  cursor: pointer;
+}
+
+/* Mobile layout */
+@media (max-width: 800px) {
+  .nav-toggle { display: block; }
+  .navbar ul { display: none; position: absolute; top: 56px; right: 12px; background: rgba(0,0,0,0.6); padding: 12px 14px; border-radius: 8px; flex-direction: column; gap: 10px; min-width: 140px; z-index: 30; }
+  .navbar ul li a { display: block; padding: 6px 0; }
 }
 
 .container {
