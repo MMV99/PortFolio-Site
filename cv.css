@@ -120,40 +120,53 @@ body {
   border-radius: 5px;
   cursor: pointer;
 }
-.cv-container h1 {
-  font-size: 2.5rem;
-  margin-bottom: 40px;
-  text-align: center;
-}
-.cv-columns {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 40px;
-  text-align: left;
-}
-.cv-section h2 {
-  color: var(--accent-color);
-  margin-bottom: 10px;
-  font-size: 1.3rem;
-}
-.cv-section p, .cv-section li, .cv-section a {
-  font-size: 1rem;
-  line-height: 1.6;
-  color: #ddd;
-}
-.cv-section a {
-  text-decoration: none;
-  color: var(--primary-color);
-}
-.cv-section a:hover {
-  text-decoration: underline;
-}
-.cv-section ul {
-  padding-left: 20px;
+.cv-container {
+  width: min(1100px, 96%);
+  margin: 0 auto;
+  padding: 24px;
 }
 
-/* Responsive & mobile polish */
-.matrix-container canvas { pointer-events: none; display: block; }
+.cv-columns {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 28px;
+  align-items: start;
+}
+
+.cv-section {
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border: 1px solid rgba(255,255,255,0.04);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 8px 28px rgba(0,0,0,0.55);
+  backdrop-filter: blur(6px);
+}
+.cv-section h2 {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  font-size: 1.05rem;
+  color: rgba(255,255,255,0.95);
+  margin-bottom: 10px;
+}
+.cv-section p, 
+.cv-section li, 
+.cv-section a {
+  color: rgba(255,255,255,0.88);
+  line-height: 1.5;
+}
+.skill-badge {
+  display: inline-block;
+  margin: 6px 6px 0 0;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+  border: 1px solid rgba(255,255,255,0.03);
+  color: rgba(255,255,255,0.9);
+  font-size: 0.9rem;
+}
+
+matrix-container canvas { pointer-events: none; display: block; }
 
 .logo { width: 80px; }
 
@@ -166,4 +179,15 @@ body {
 @media (max-width: 600px) {
   .cv-container h1 { font-size: 1.6rem; text-align: center; }
   .cv-section p, .cv-section li, .cv-section a { font-size: 0.95rem; }
+}
+
+/* mobile: single column */
+@media (max-width: 900px) {
+  .cv-columns {
+    grid-template-columns: 1fr;
+  }
+  
+  .cv-container {
+    padding: 18px;
+  }
 }
