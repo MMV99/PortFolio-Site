@@ -51,7 +51,7 @@
 (function() {
   const heroTitle = document.querySelector('.hero-title');
   const originalText = heroTitle.textContent;
-  const roles = ["Creative Developer", "Problem Solver", "UI Enthusiast", "Game Tech Explorer"];
+  const roles = [/*"Creative Developer", "Problem Solver", "UI Enthusiast", "Game Tech Explorer"*/];
   let roleIndex = 0;
   let charIndex = 0;
   let isDeleting = false;
