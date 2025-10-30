@@ -37,22 +37,21 @@ function resizeCanvas(){
     canvas.style.width = window.innerWidth + 'px';
     canvas.style.height = window.innerHeight + 'px';
 
-    // Smaller font size (changed from 62 to 85)
-    fontSize = Math.max(8, Math.round(window.innerWidth / 85));
+    // Fixed font size of 10 pixels
+    fontSize = 10;
     ctx.font = `${fontSize * dpr}px "Courier New", monospace`;
     ctx.textBaseline = 'top';
 
+    // Calculate columns based on fixed font size
     columns = Math.floor(w / (fontSize * dpr));
     drops = new Array(columns).fill(0);
 }
 
 // Animation loop
 function draw(now){
-    // Fade old frame
     ctx.fillStyle = 'rgba(0,0,0,0.12)';
     ctx.fillRect(0,0,w,h);
 
-    // Draw characters with glow
     ctx.save();
     ctx.shadowBlur = 8 * dpr;
     ctx.shadowColor = `rgba(${matrixRgb.join(',')},0.6)`;
@@ -66,11 +65,13 @@ function draw(now){
         const charCode = 2720 + Math.floor(Math.random() * 33);
         ctx.fillText(String.fromCharCode(charCode), x, y);
 
-        // Slower falling speed (changed probabilities and speed)
-        if (Math.random() > 0.998 && drops[i] * fontSize * dpr > h * 0.3) {
+        // Calculate speed: 1920px / 3s = 640px per second
+        // Since we're using requestAnimationFrame (60fps), we divide by 60
+        // 640/60 ≈ 10.67 pixels per frame
+        if((y > h && Math.random() > 0.998) || drops[i] * fontSize * dpr > h + Math.random() * 1000) {
             drops[i] = 0;
         } else {
-            drops[i] += (Math.random() > 0.96 ? 0.05 : 0.1); // Reduced speed
+            drops[i] += 10.67 / fontSize; // Consistent speed regardless of font size
         }
     }
     ctx.restore();
