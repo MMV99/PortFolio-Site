@@ -1,4 +1,3 @@
-/* Enhanced CSS */
 :root {
   --vapo-pink: #ff71ce;
   --vapo-blue: #01cdfe;
@@ -16,6 +15,12 @@
 
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
@@ -55,47 +60,42 @@ main, .navbar, .glass-container {
 /* Enhanced Navigation */
 .navbar {
   position: fixed;
-  top: 12px; 
-  left: 0; 
+  top: 0;
+  left: 0;
   right: 0;
-  margin: 0 5%;
-  height: 48px;
+  height: 70px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 12px;
-  background: rgba(3,6,10,0.24);
-  border-radius: 10px;
-  padding: 0 16px;
-  z-index: 50;
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border: 1px solid rgba(255,255,255,0.03);
+  padding: 0 5%;
+  z-index: 100;
+  background: rgba(3,6,10,0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
   transition: all 0.3s ease;
 }
 
-.navbar.scrolled {
-  top: 8px;
-  background: rgba(3,6,10,0.4);
-  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+.logo-container {
+  display: flex;
+  align-items: center;
 }
 
 .logo { 
-  height: 32px; 
-  filter: drop-shadow(0 0 6px var(--vapo-blue));
-  transition: transform 0.3s ease;
+  height: 42px; 
+  filter: drop-shadow(0 0 8px var(--vapo-blue)) brightness(1.2);
+  transition: all 0.3s ease;
 }
 
 .logo:hover {
   transform: scale(1.05);
+  filter: drop-shadow(0 0 12px var(--vapo-blue)) brightness(1.3);
 }
 
 .nav-list {
   display: flex;
-  gap: 18px;
+  gap: 28px;
   list-style: none;
-  margin: 0;
-  padding: 0;
   align-items: center;
 }
 
@@ -103,33 +103,16 @@ main, .navbar, .glass-container {
   color: var(--text);
   text-decoration: none;
   font-weight: 500;
-  padding: 6px 12px;
+  padding: 8px 16px;
   border-radius: 6px;
   transition: all 0.3s ease;
   position: relative;
-  overflow: hidden;
-}
-
-.nav-link::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
-  transition: left 0.5s;
-}
-
-.nav-link:hover::before {
-  left: 100%;
 }
 
 .nav-link:hover,
 .nav-link.active {
   color: var(--accent);
-  background: rgba(255,255,255,0.02);
-  box-shadow: 0 0 15px rgba(255, 113, 206, 0.3);
+  background: rgba(255,255,255,0.05);
 }
 
 /* Enhanced Glass UI */
@@ -142,29 +125,11 @@ main, .navbar, .glass-container {
   -webkit-backdrop-filter: blur(18px);
   transition: all 0.4s ease;
   box-shadow: 0 8px 32px rgba(0,0,0,0.1);
-  position: relative;
-  overflow: hidden;
-}
-
-.glass-container::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.05), transparent);
-  transition: left 0.6s;
-}
-
-.glass-container:hover::before {
-  left: 100%;
 }
 
 .glass-container:hover { 
-  transform: translateY(-8px); 
+  transform: translateY(-5px); 
   box-shadow: 0 12px 40px rgba(0,0,0,0.15);
-  border-color: rgba(255,255,255,0.2);
 }
 
 /* Sections */
@@ -174,7 +139,7 @@ main, .navbar, .glass-container {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 80px 6% 50px;
+  padding: 100px 6% 50px;
 }
 
 .section-header {
@@ -252,23 +217,6 @@ main, .navbar, .glass-container {
   text-decoration: none;
   font-weight: 500;
   transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
-}
-
-.btn::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-  transition: left 0.5s;
-}
-
-.btn:hover::before {
-  left: 100%;
 }
 
 .btn-primary {
@@ -310,19 +258,6 @@ main, .navbar, .glass-container {
   border: 1px solid rgba(255,255,255,0.1);
   box-shadow: 0 10px 30px rgba(0,0,0,0.2);
   animation: float 6s ease-in-out infinite;
-  position: relative;
-  overflow: hidden;
-}
-
-.floating-card::before {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
-  transform: rotate(30deg);
 }
 
 @keyframes float {
@@ -331,8 +266,6 @@ main, .navbar, .glass-container {
 }
 
 .card-content {
-  position: relative;
-  z-index: 1;
   text-align: center;
 }
 
@@ -368,7 +301,7 @@ main, .navbar, .glass-container {
 }
 
 .cv-card:hover {
-  transform: translateY(-10px) scale(1.02);
+  transform: translateY(-10px);
 }
 
 .card-icon {
@@ -482,22 +415,10 @@ main, .navbar, .glass-container {
   font-weight: 500;
   font-size: 0.9rem;
   transition: all 0.3s ease;
-  position: relative;
 }
 
-.project-link::after {
-  content: '';
-  position: absolute;
-  bottom: -2px;
-  left: 0;
-  width: 0;
-  height: 1px;
-  background: var(--vapo-blue);
-  transition: width 0.3s ease;
-}
-
-.project-link:hover::after {
-  width: 100%;
+.project-link:hover {
+  text-decoration: underline;
 }
 
 /* Contact Section */
@@ -577,7 +498,6 @@ main, .navbar, .glass-container {
 .social-link:hover {
   background: rgba(255,255,255,0.07);
   transform: translateX(5px);
-  border-color: rgba(255,255,255,0.1);
 }
 
 .social-link i {
@@ -616,12 +536,8 @@ main, .navbar, .glass-container {
 }
 
 @media (max-width: 768px) {
-  .navbar {
-    margin: 0 3%;
-  }
-  
   .nav-list {
-    gap: 10px;
+    gap: 15px;
   }
   
   .hero-title {
@@ -659,5 +575,18 @@ main, .navbar, .glass-container {
   
   .glass-container {
     padding: 20px;
+  }
+  
+  .navbar {
+    padding: 0 3%;
+  }
+  
+  .nav-list {
+    gap: 10px;
+  }
+  
+  .nav-link {
+    padding: 6px 12px;
+    font-size: 0.9rem;
   }
 }

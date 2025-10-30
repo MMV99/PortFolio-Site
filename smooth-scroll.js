@@ -1,10 +1,9 @@
-// Smooth scroll + active nav (no hamburger / no mobile overlay)
+// Smooth scroll + active nav
 (function () {
-  // select links inside nav-list
   const links = Array.from(document.querySelectorAll('.nav-list a'));
   const sections = Array.from(document.querySelectorAll('section'));
 
-  // smooth scroll behavior for internal links
+  // Smooth scroll behavior for internal links
   links.forEach(link => {
     link.addEventListener('click', (e) => {
       const href = link.getAttribute('href');
@@ -37,15 +36,12 @@
         const link = linkById[id];
         if (!link) return;
         if (entry.isIntersecting) {
-          // set active
           links.forEach(l => l.classList.remove('active'));
           link.classList.add('active');
         }
       });
-    }, { threshold: 0.6 });
+    }, { threshold: 0.5 });
 
     sections.forEach(s => observer.observe(s));
   }
-
-  // No mobile menu code — navigation always visible
 })();
