@@ -1,48 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#00abf0" />
-  <title>Mikko Vaarala – Portfolio</title>
-  <link rel="stylesheet" href="index.css" />
-  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#00abf0">
+    <title>Mikko Vaarala – Portfolio</title>
+    <link rel="stylesheet" href="index.css">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
 </head>
 <body data-matrix-color="#00abf0">
-  <div class="popup-container">
-    <div class="popup">
-      <p>Site Under Construction</p>
-      <p>Expect everything to change!</p>
-      <button class="close-btn">Close</button>
+    <div class="matrix-container">
+        <canvas id="matrix"></canvas>
     </div>
-  </div>
 
-  <div class="matrix-container"><canvas id="matrix"></canvas></div>
+    <div class="container">
+        <header class="navbar">
+            <img src="logo.png" class="logo" alt="Logo">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="cv.html">CV</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </header>
 
-  <div class="container">
-    <header class="navbar" role="navigation" aria-label="Main navigation">
-      <img src="logo.png" class="logo" alt="Logo">
-      <button class="nav-toggle" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
-        <i class="bx bx-menu"></i>
-      </button>
-      <ul id="main-nav">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="cv.html">CV</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </header>
+        <section class="hero">
+            <div class="glass">
+                <h1>Mikko Vaarala</h1>
+                <h2>Software Developer & Problem Solver</h2>
+                <p class="summary">
+                    Passionate about creating elegant solutions through code.
+                    Specialized in full-stack development with a focus on user experience.
+                </p>
+            </div>
+        </section>
+    </div>
 
-    <section class="hero">
-      <h1>Mikko Vaarala</h1>
-      <h2>Bachelor of Engineering – Information Technology</h2>
-      <p class="summary">A 26-year-old IT graduate from Rovaniemi, Finland, with a professional background in electronics, maintenance, and technical support. I bring a hands-on, analytical approach to solving problems, supported by experience as a Technician and Maintenance Supervisor.</p>
-      <p class="summary">I am passionate about technology and continuous learning. My hobbies include video games, fishing, automotive mechanics, and tinkering with computer systems.</p>
-    </section>
-  </div>
-
-  <!-- scripts at end -->
-  <script src="nav.js"></script>
-  <script src="matrix.js"></script>
-  <script src="popup.js"></script>
+    <script src="matrix.js"></script>
+    <script src="popup.js"></script>
 </body>
 </html>

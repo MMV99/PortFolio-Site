@@ -124,6 +124,8 @@ body {
   width: min(1100px, 96%);
   margin: 0 auto;
   padding: 24px;
+  position: relative;
+  z-index: 2;
 }
 
 .cv-columns {

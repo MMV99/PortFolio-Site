@@ -37,7 +37,8 @@ function resizeCanvas(){
     canvas.style.width = window.innerWidth + 'px';
     canvas.style.height = window.innerHeight + 'px';
 
-    fontSize = Math.max(10, Math.round(window.innerWidth / 62));
+    // Smaller font size (changed from 62 to 85)
+    fontSize = Math.max(8, Math.round(window.innerWidth / 85));
     ctx.font = `${fontSize * dpr}px "Courier New", monospace`;
     ctx.textBaseline = 'top';
 
@@ -65,23 +66,24 @@ function draw(now){
         const charCode = 2720 + Math.floor(Math.random() * 33);
         ctx.fillText(String.fromCharCode(charCode), x, y);
 
-        if (Math.random() > 0.995 && drops[i] * fontSize * dpr > h * 0.3) {
+        // Slower falling speed (changed probabilities and speed)
+        if (Math.random() > 0.998 && drops[i] * fontSize * dpr > h * 0.3) {
             drops[i] = 0;
         } else {
-            drops[i] += (Math.random() > 0.92 ? 0.5 : 1.0);
+            drops[i] += (Math.random() > 0.96 ? 0.25 : 0.5); // Reduced speed
         }
     }
     ctx.restore();
 
-    // Bloom effect
+    // Depth haze
     ctx.save();
     ctx.globalCompositeOperation = 'lighter';
     ctx.fillStyle = `rgba(${matrixRgb.join(',')},0.035)`;
     ctx.fillRect(0,0,w,h);
     ctx.restore();
 
-    // Animated smoke overlay
-    smokeOffset += 0.22 * dpr;
+    // Slower smoke animation
+    smokeOffset += 0.15 * dpr; // Reduced from 0.22
     const gradient = ctx.createLinearGradient(0, smokeOffset % h, 0, (smokeOffset * 1.6) % h + h);
     gradient.addColorStop(0, 'rgba(6,6,8,0.18)');
     gradient.addColorStop(0.45, 'rgba(10,10,12,0.06)');

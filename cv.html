@@ -1,70 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Curriculum Vitae – Mikko Vaarala</title>
-  <link rel="stylesheet" href="cv.css">
-  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curriculum Vitae – Mikko Vaarala</title>
+    <link rel="stylesheet" href="cv.css">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
 </head>
 <body data-matrix-color="#00f014">
-  <div class="matrix-container"><canvas id="matrix"></canvas></div>
+    <div class="matrix-container">
+        <canvas id="matrix"></canvas>
+    </div>
 
-  <div class="container">
-    <header class="navbar" role="navigation" aria-label="Main navigation">
-      <img src="logo.png" class="logo" alt="Logo">
-      <button class="nav-toggle" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
-        <i class="bx bx-menu"></i>
-      </button>
-      <ul id="main-nav">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="cv.html">CV</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </header>
+    <div class="container">
+        <header class="navbar">
+            <img src="logo.png" class="logo" alt="Logo">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="cv.html">CV</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </header>
 
-    <main class="cv-container">
-      <h1>Curriculum Vitae</h1>
-      <section class="cv-columns">
-        <div class="cv-section">
-          <h2><i class='bx bx-book'></i> Education</h2>
-          <p><strong>Bachelor of Engineering – Information Technology</strong><br>Lapland UAS, 2020–2025</p>
-          <p><strong>Vocational Qualification in ICT</strong><br>2015–2018 • Lions Club Stipend Recipient</p>
-
-          <h2><i class='bx bx-briefcase'></i> Internship</h2>
-          <p>Elwira Oy – Electronics Dismantler (05/2017–06/2017)</p>
-          <p>Lapin Systema Oy – Technician (11/2017–01/2018)</p>
-          <p>FrostBit Pelikehittäjä (05/2025-09/2025)</p>
-
-          <h2><i class='bx bx-buildings'></i> Work Experience</h2>
-          <p>Sijaishaltija Oy – Janitor (2017)</p>
-          <p>Power Finland Oy – Warehouse Operative, Maintenance Supervisor, Technician (2018–2020)</p>
+        <div class="cv-container">
+            <div class="cv-columns">
+                <div class="cv-section">
+                    <h2><i class='bx bx-user'></i> Profile</h2>
+                    <!-- Add your profile content -->
+                </div>
+                
+                <div class="cv-section">
+                    <h2><i class='bx bx-code-alt'></i> Skills</h2>
+                    <div class="skill-badges">
+                        <!-- Add your skills as badges -->
+                        <span class="skill-badge">JavaScript</span>
+                        <span class="skill-badge">React</span>
+                        <!-- Add more skills -->
+                    </div>
+                </div>
+            </div>
         </div>
+    </div>
 
-        <div class="cv-section">
-          <h2><i class='bx bx-globe'></i> Languages</h2>
-          <p>Finnish – Native</p>
-          <p>English – Professional Proficiency</p>
-          <p>Swedish – Basic Skills</p>
-
-          <h2><i class='bx bx-certification'></i> Certificates</h2>
-          <ul>
-            <li>Emergency Aid Level 1 (2016)</li>
-            <li>Electrical Safety Training (2016)</li>
-            <li>Occupational Safety Card (2016)</li>
-            <li>Fire Safety Training (2016)</li>
-            <li>Calman Calibration Training (2018)</li>
-          </ul>
-
-          <h2><i class='bx bx-link'></i> Links</h2>
-          <a href="https://www.linkedin.com/in/mikko-vaarala-216258167/" target="_blank"><i class='bx bxl-linkedin'></i> LinkedIn</a><br>
-          <a href="https://github.com/MMV99" target="_blank"><i class='bx bxl-github'></i> GitHub</a>
-        </div>
-      </section>
-    </main>
-  </div>
-
-  <script src="nav.js"></script>
-  <script src="matrix.js"></script>
+    <script src="matrix.js"></script>
 </body>
 </html>
