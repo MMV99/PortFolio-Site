@@ -37,14 +37,18 @@ function resizeCanvas(){
     canvas.style.width = window.innerWidth + 'px';
     canvas.style.height = window.innerHeight + 'px';
 
-    // Fixed font size of 10 pixels
     fontSize = 10;
     ctx.font = `${fontSize * dpr}px "Courier New", monospace`;
     ctx.textBaseline = 'top';
 
-    // Calculate columns based on fixed font size
-    columns = Math.floor(w / (fontSize * dpr));
+    // Increased density
+    columns = Math.floor((w / (fontSize * dpr)) * 2);
     drops = new Array(columns).fill(0);
+
+    // Initialize drops evenly across screen height
+    for(let i = 0; i < drops.length; i++) {
+        drops[i] = i % Math.floor(h / (fontSize * dpr));
+    }
 }
 
 // Animation loop
@@ -58,20 +62,17 @@ function draw(now){
     ctx.fillStyle = `rgba(${matrixRgb.join(',')},0.95)`;
     ctx.globalCompositeOperation = 'source-over';
 
-    for(let i=0; i<drops.length; i++){
-        const x = Math.floor(i * fontSize * dpr);
+    for(let i = 0; i < drops.length; i++){
+        const x = Math.floor((i * fontSize * dpr) / 2);
         const y = Math.floor(drops[i] * fontSize * dpr);
         
-        const charCode = 2720 + Math.floor(Math.random() * 33);
+        const charCode = 2720 + Math.floor(Math.random() * 60);
         ctx.fillText(String.fromCharCode(charCode), x, y);
 
-        // Calculate speed: 1920px / 3s = 640px per second
-        // Since we're using requestAnimationFrame (60fps), we divide by 60
-        // 640/60 ≈ 10.67 pixels per frame
-        if((y > h && Math.random() > 0.998) || drops[i] * fontSize * dpr > h + Math.random() * 1000) {
+        // Continuous fall with wrap-around
+        drops[i] += 2.1 / fontSize;
+        if(drops[i] * fontSize * dpr > h) {
             drops[i] = 0;
-        } else {
-            drops[i] += 10.67 / fontSize; // Consistent speed regardless of font size
         }
     }
     ctx.restore();
