@@ -70,7 +70,7 @@ function draw(now){
         if (Math.random() > 0.998 && drops[i] * fontSize * dpr > h * 0.3) {
             drops[i] = 0;
         } else {
-            drops[i] += (Math.random() > 0.96 ? 0.25 : 0.5); // Reduced speed
+            drops[i] += (Math.random() > 0.96 ? 0.05 : 0.1); // Reduced speed
         }
     }
     ctx.restore();
