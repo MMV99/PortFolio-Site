@@ -54,7 +54,7 @@
 (function() {
   const heroSubtitle = document.querySelector('.hero-subtitle');
   const originalText = "Creative Developer & Problem Solver";
-  const roles = ["UI/UX Enthusiast", "Game Developer", "Full-Stack Developer", "Tech Innovator"];
+  const roles = [/*"UI/UX Enthusiast", "Game Developer", "Full-Stack Developer", "Tech Innovator"*/];
   let roleIndex = 0;
   let charIndex = 0;
   let isDeleting = false;
