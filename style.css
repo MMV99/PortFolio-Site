@@ -83,17 +83,33 @@
   display:flex;
   align-items:center;
   justify-content:space-between;
-  gap:12px;
   background: rgba(3,6,10,0.24);
   border-radius:10px;
-  padding:6px 12px;
+  padding:0 16px;
   z-index:50;
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   border:1px solid rgba(255,255,255,0.03);
 }
 
-.logo{height:34px; width:auto; display:block}
+.logo-container {
+    height: 40px;
+    width: auto;
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    height: 100%;
+    width: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 0 8px rgba(0,171,240,0.3));
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.05);
+}
 
 .nav-list{display:flex;gap:18px;list-style:none}
 .nav-list a{
