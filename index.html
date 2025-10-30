@@ -2,28 +2,29 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <meta name="description" content="Mikko Vaarala - Software Developer Portfolio" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Mikko Vaarala – Portfolio</title>
+    <meta name="description" content="Mikko Vaarala - Software Developer Portfolio" />
 
     <link rel="stylesheet" href="style.css" />
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
 </head>
 
 <body>
-    <!-- Background -->
-    <div class="background-container" aria-hidden="true">
-        <canvas id="lava" aria-hidden="true"></canvas>
-        <canvas id="smoke" aria-hidden="true"></canvas>
+    <div class="background-container">
+        <canvas id="lava"></canvas>
+        <canvas id="smoke"></canvas>
     </div>
 
-    <!-- Navbar -->
-    <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <nav class="navbar">
         <div class="logo-container">
-            <a href="#home">
-                <img src="mmv-logo.png" alt="MMV Logo" class="logo">
-            </a>
+            <a href="#home"><img src="mmv-logo.png" class="logo" alt="MMV Logo"></a>
         </div>
+
+        <!-- Hamburger -->
+        <button class="nav-toggle" aria-label="Toggle menu">
+            <i class="bx bx-menu"></i>
+        </button>
 
         <ul class="nav-list">
             <li><a href="#home" class="nav-link">Home</a></li>
@@ -31,29 +32,26 @@
             <li><a href="#projects" class="nav-link">Projects</a></li>
             <li><a href="#contact" class="nav-link">Contact</a></li>
         </ul>
+
+        <div class="nav-overlay"></div>
     </nav>
 
-    <!-- Main Content -->
     <main>
-        <!-- HOME -->
         <section id="home" class="section">
             <div class="glass-container">
                 <h1>Mikko Vaarala</h1>
                 <h2>Software Developer & Problem Solver</h2>
-                <p class="summary">
-                    Passionate about crafting elegant solutions, interactive experiences, and modern UI effects.
-                </p>
+                <p>Interactive UI, modern effects, real-time visuals & indie game tech.</p>
             </div>
         </section>
 
-        <!-- CV -->
         <section id="cv" class="section">
             <div class="glass-container cv-grid">
-                <div class="cv-left">
+                <div>
                     <h2>Profile</h2>
-                    <p>Software developer with passion for web technologies, interactive visuals, and game-like UI effects.</p>
+                    <p>Developer specializing in creative web experiences and game-inspired interfaces.</p>
                 </div>
-                <div class="cv-right">
+                <div>
                     <h2>Skills</h2>
                     <div class="skill-badges">
                         <span class="skill-badge">JavaScript</span>
@@ -66,18 +64,16 @@
             </div>
         </section>
 
-        <!-- PROJECTS -->
         <section id="projects" class="section">
             <div class="glass-container">
                 <h2>Projects</h2>
-                <p>Showcasing my best work soon.</p>
+                <p>Showcasing soon...</p>
             </div>
         </section>
 
-        <!-- CONTACT -->
         <section id="contact" class="section">
             <div class="glass-container">
-                <h2>Get in Touch</h2>
+                <h2>Contact</h2>
                 <div class="contact-links">
                     <a href="mailto:email@example.com"><i class="bx bx-envelope"></i>Email</a>
                     <a href="https://linkedin.com/in/yourusername" target="_blank"><i class="bx bxl-linkedin"></i>LinkedIn</a>
@@ -87,7 +83,6 @@
         </section>
     </main>
 
-    <!-- Scripts -->
     <script src="lava.js"></script>
     <script src="smoke.js"></script>
     <script src="smooth-scroll.js"></script>
