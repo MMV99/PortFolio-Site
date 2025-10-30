@@ -1,12 +1,11 @@
 // Lava-lamp blobs background (uses radial gradients + lighter composite)
 (function () {
     const canvas = document.getElementById('lava');
-    if (!canvas) return;
     const ctx = canvas.getContext('2d', { alpha: true });
 
     let w = 0, h = 0, dpr = 1;
     const blobs = [];
-    const BLOB_COUNT = 14; // increase for denser background
+    const BLOB_COUNT = 18; // Increased for more visual impact
 
     function rand(min, max) { return Math.random() * (max - min) + min; }
 
@@ -14,37 +13,42 @@
         constructor() { this.reset(true); }
 
         reset(initial = false) {
-            this.size = rand(80, 220);                    // radius
+            this.size = rand(100, 280);                   // Larger blobs
             this.x = rand(-this.size, w + this.size);
             this.y = initial ? rand(0, h) : h + rand(20, 200);
-            this.vy = rand(0.15, 0.6);                    // vertical speed
-            this.vx = rand(-0.2, 0.2);                    // horizontal drift
+            this.vy = rand(0.12, 0.45);                   // Slower, more graceful movement
+            this.vx = rand(-0.15, 0.15);                  
             this.phase = rand(0, Math.PI * 2);
-            // warm red/orange base color variations
-            const r = Math.round(rand(160, 255));
-            const g = Math.round(rand(10, 60));
-            const b = Math.round(rand(10, 40));
-            this.color = `rgba(${r},${g},${b},`;
+            // Enhanced color palette with rich reds and oranges
+            const hue = rand(0, 40);                      // Red to orange range
+            const sat = rand(80, 100);                    // High saturation
+            const light = rand(45, 65);                   // Controlled brightness
+            this.color = `hsla(${hue}, ${sat}%, ${light}%,`;
             this.offset = rand(0, 1000);
+            this.pulseSpeed = rand(0.6, 1.2);            // Individual pulse rates
         }
 
         update(delta) {
-            // delta in seconds
-            this.phase += delta * 0.4;
-            this.x += Math.sin(this.phase * 0.7) * this.vx * 60;
+            this.phase += delta * this.pulseSpeed;
+            this.x += Math.sin(this.phase * 0.5) * this.vx * 60;
             this.y -= this.vy * 60 * delta;
-            // slight pulsation
-            this.displaySize = this.size * (1 + Math.sin(this.phase * 0.9 + this.offset) * 0.055);
+            // More pronounced pulsation
+            this.displaySize = this.size * (1 + Math.sin(this.phase) * 0.08);
             if (this.y < -this.displaySize * 1.4) this.reset();
         }
 
         draw(ctx) {
             const s = this.displaySize;
-            const gx = ctx.createRadialGradient(this.x, this.y, Math.max(1, s * 0.08), this.x, this.y, s);
+            const gx = ctx.createRadialGradient(
+                this.x, this.y, s * 0.1,
+                this.x, this.y, s * 1.25
+            );
+            // Rich multi-stop gradient for more depth
             gx.addColorStop(0, this.color + '0.95)');
-            gx.addColorStop(0.25, this.color + '0.55)');
-            gx.addColorStop(0.6, this.color + '0.12)');
-            gx.addColorStop(1, 'rgba(0,10,30,0)');
+            gx.addColorStop(0.4, this.color + '0.55)');
+            gx.addColorStop(0.7, this.color + '0.25)');
+            gx.addColorStop(1, 'hsla(220, 80%, 10%, 0)');
+            
             ctx.fillStyle = gx;
             ctx.beginPath();
             ctx.arc(this.x, this.y, s, 0, Math.PI * 2);
