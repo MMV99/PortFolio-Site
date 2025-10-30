@@ -151,3 +151,19 @@ body {
 .cv-section ul {
   padding-left: 20px;
 }
+
+/* Responsive & mobile polish */
+.matrix-container canvas { pointer-events: none; display: block; }
+
+.logo { width: 80px; }
+
+@media (max-width: 800px) {
+  .cv-columns { grid-template-columns: 1fr; gap: 24px; }
+  .container { padding: 20px 12px; }
+  .cv-container h1 { font-size: 1.8rem; }
+  .cv-section h2 { font-size: 1.1rem; }
+}
+@media (max-width: 600px) {
+  .cv-container h1 { font-size: 1.6rem; text-align: center; }
+  .cv-section p, .cv-section li, .cv-section a { font-size: 0.95rem; }
+}
