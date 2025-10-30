@@ -3,54 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#00abf0">
+    <meta name="description" content="Mikko Vaarala - Software Developer Portfolio">
     <title>Mikko Vaarala – Portfolio</title>
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="style.css">
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
-    <style>
-        .matrix-container {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            background: #081b29;
-        }
-        .matrix-container canvas {
-            display: block;
-            pointer-events: none;
-        }
-    </style>
 </head>
-<body data-matrix-color="#00abf0">
+<body>
     <div class="matrix-container">
         <canvas id="matrix"></canvas>
     </div>
 
-    <div class="container">
-        <header class="navbar">
-            <img src="logo.png" class="logo" alt="Logo">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="cv.html">CV</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </header>
+    <nav class="navbar">
+        <img src="logo.png" class="logo" alt="Logo">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#cv">CV</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
 
-        <section class="hero">
-            <div class="glass">
+    <main>
+        <section id="home" class="section">
+            <div class="glass-container">
                 <h1>Mikko Vaarala</h1>
                 <h2>Software Developer & Problem Solver</h2>
-                <p class="summary">
-                    Passionate about creating elegant solutions through code.
-                    Specialized in full-stack development with a focus on user experience.
-                </p>
+                <p>Passionate about creating elegant solutions through code.</p>
             </div>
         </section>
-    </div>
+
+        <section id="cv" class="section">
+            <div class="glass-container cv-grid">
+                <div class="cv-left">
+                    <h2>Profile</h2>
+                    <p>Your profile content here...</p>
+                </div>
+                <div class="cv-right">
+                    <h2>Skills</h2>
+                    <div class="skill-badges">
+                        <span class="skill-badge">JavaScript</span>
+                        <span class="skill-badge">React</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section">
+            <div class="glass-container">
+                <h2>Get in Touch</h2>
+                <div class="contact-links">
+                    <a href="mailto:email@example.com">
+                        <i class='bx bx-envelope'></i> email@example.com
+                    </a>
+                    <a href="https://linkedin.com/in/yourusername">
+                        <i class='bx bxl-linkedin'></i> LinkedIn
+                    </a>
+                    <a href="https://github.com/yourusername">
+                        <i class='bx bxl-github'></i> GitHub
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <script src="matrix.js"></script>
-    <script src="popup.js"></script>
+    <script src="smooth-scroll.js"></script>
 </body>
 </html>
