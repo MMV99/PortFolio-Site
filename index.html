@@ -1,21 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Mikko Vaarala - Software Developer Portfolio">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description" content="Mikko Vaarala - Software Developer Portfolio" />
     <title>Mikko Vaarala – Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
 </head>
 <body>
-    <div class="matrix-container">
-        <canvas id="matrix"></canvas>
+    <div class="background-container" aria-hidden="true">
+        <canvas id="lava" role="img" aria-hidden="true"></canvas>
+        <div class="smoke-overlay"></div>
     </div>
 
-    <nav class="navbar">
-        <img src="logo.png" class="logo" alt="Logo">
-        <ul>
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+        <img src="logo.png" class="logo" alt="Logo" />
+        <ul class="nav-list">
             <li><a href="#home">Home</a></li>
             <li><a href="#cv">CV</a></li>
             <li><a href="#contact">Contact</a></li>
@@ -27,7 +28,10 @@
             <div class="glass-container">
                 <h1>Mikko Vaarala</h1>
                 <h2>Software Developer & Problem Solver</h2>
-                <p>Passionate about creating elegant solutions through code.</p>
+                <p class="summary">
+                    Passionate about creating elegant solutions through code.
+                    Specialized in full‑stack development with focus on UX.
+                </p>
             </div>
         </section>
 
@@ -35,13 +39,14 @@
             <div class="glass-container cv-grid">
                 <div class="cv-left">
                     <h2>Profile</h2>
-                    <p>Your profile content here...</p>
+                    <p>Short professional summary goes here.</p>
                 </div>
                 <div class="cv-right">
                     <h2>Skills</h2>
                     <div class="skill-badges">
                         <span class="skill-badge">JavaScript</span>
                         <span class="skill-badge">React</span>
+                        <span class="skill-badge">Node.js</span>
                     </div>
                 </div>
             </div>
@@ -51,21 +56,16 @@
             <div class="glass-container">
                 <h2>Get in Touch</h2>
                 <div class="contact-links">
-                    <a href="mailto:email@example.com">
-                        <i class='bx bx-envelope'></i> email@example.com
-                    </a>
-                    <a href="https://linkedin.com/in/yourusername">
-                        <i class='bx bxl-linkedin'></i> LinkedIn
-                    </a>
-                    <a href="https://github.com/yourusername">
-                        <i class='bx bxl-github'></i> GitHub
-                    </a>
+                    <a href="mailto:email@example.com"><i class="bx bx-envelope"></i> email@example.com</a>
+                    <a href="https://linkedin.com/in/yourusername"><i class="bx bxl-linkedin"></i> LinkedIn</a>
+                    <a href="https://github.com/yourusername"><i class="bx bxl-github"></i> GitHub</a>
                 </div>
             </div>
         </section>
     </main>
 
-    <script src="matrix.js"></script>
+    <script src="lava.js"></script>
     <script src="smooth-scroll.js"></script>
+    <script src="popup.js"></script>
 </body>
 </html>
